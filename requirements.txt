@@ -1,0 +1,4 @@
+#install google-generativeai and streamlit for using Google Gemini API and building web apps
+google-generativeai
+streamlit
+python-dotenv #install python-dotenv to manage environment variables like API keys
