@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-prac
+  labels:
+    app: devops-prac
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-prac
+  template:
+    metadata:
+      labels:
+        app: devops-prac
+    spec:
+      containers:
+      - name: devops-prac
+        image: anshkale/testify:v1
+        ports:
+        - containerPort: 8501
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gemini-secret
+              key: api-key
